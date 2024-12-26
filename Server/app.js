@@ -12,6 +12,10 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(cors({
+    origin: 'http://localhost:5173/login', // Your frontend URL
+    credentials: true // Allow credentials (cookies)
+}));
 
 
 app.use("/",userRoutes)

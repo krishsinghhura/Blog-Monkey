@@ -39,7 +39,7 @@ const login = async (req, res) => {
                 { email: user.email, userid: user._id },
                 process.env.JWT_SECRET
             );
-            res.cookie("token", token, { httpOnly: true });
+            res.cookie("token", token, { httpOnly: true, secure: false });
             return res.status(201).json({ message: 'logged in', token });
         } else {
             return res.status(401).json({ message: "Invalid password" });
