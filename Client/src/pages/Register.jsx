@@ -14,7 +14,7 @@ const Register = () => {
         try {
             const res = await axios.post("http://localhost:4000/register", input);
             console.log("Registration Success:", res.data);
-            navigate("/login");
+            navigate("/");
         } catch (error) {
             console.error("Error:", error.response?.data || error.message);
         }
